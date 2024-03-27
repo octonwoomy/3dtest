@@ -51,7 +51,12 @@ scene.add(spongecube)
 spongecube.position.y += 10;
 
 const fauna = new THREE.TextureLoader().load('earth.png');
-
+const fsquare = new THREE.Mesh(
+  new THREE.BoxGeometry(3,3,3),
+  new THREE.MeshBasicMaterial({map: fauna})
+)
+scene.add(fsquare);
+fsquare.position.x += 10;
 const round = new THREE.Mesh(
   new THREE.SphereGeometry(3,32,32),
   new THREE.MeshStandardMaterial({map: fauna})
